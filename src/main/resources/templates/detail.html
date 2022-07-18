@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Product</title>
+</head>
+
+<body>
+    <h1>Detail Product</h1>
+    <table border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Slug</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td th:text="${product.id}"></td>
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.slug}"></td>
+                <td th:text="${product.category}"></td>
+                <td th:text="${product.price}"></td>
+                <td th:text="${product.stock}"></td>
+                <td th:text="${product.description}"></td>
+                <td>
+                    <a th:href="@{/edit/{id}(id=${product.id})}" style="color: blue;">Edit</a>
+                    <span>|</span>
+                    <a th:href="@{/delete/{id}(id=${product.id})}" style="color: blue;">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <a th:href="@{/}">Back</a>
+</body>
+
+</html>
